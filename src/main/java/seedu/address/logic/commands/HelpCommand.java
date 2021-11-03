@@ -18,7 +18,9 @@ public class HelpCommand extends Command {
      */
     public HelpCommand(String message) {
         if (message.isEmpty()) {
-            this.messageUsage = DEFAULT_MESSAGE;
+            this.messageUsage = DEFAULT_MESSAGE.substring(1);
+        } else if (message.equals("Command not recognised. ")) {
+            this.messageUsage = message + DEFAULT_MESSAGE;
         } else {
             this.messageUsage = message;
         }
