@@ -123,7 +123,7 @@ public class HelpCommandParserTest {
     @Test
     public void parse_validEmptyArgs_success() {
         // asking help for empty command
-        HelpCommand expectedHelpCommand = new HelpCommand(HelpCommand.DEFAULT_MESSAGE);
+        HelpCommand expectedHelpCommand = new HelpCommand(HelpCommand.DEFAULT_MESSAGE.substring(1));
         assertParseSuccess(parser, "", expectedHelpCommand);
     }
 
